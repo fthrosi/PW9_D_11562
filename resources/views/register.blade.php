@@ -32,9 +32,9 @@
             <h2 class="text-center"><b>Register</b></h2>
             <hr>
 
-            @if(Session('error'))
-                <div class="alert alert-danger">
-                   <b>Oops!</b> {{ Session('error') }}
+            @if(Session('message'))
+                <div class="alert alert-success">
+                   {{ Session('message') }}
                 </div>
             @endif
 

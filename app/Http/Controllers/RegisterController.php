@@ -20,7 +20,7 @@ class RegisterController extends Controller
     public function actionRegister(Request $request)
     {
         $str = Str::random(100);
-        $user = User::create([
+        User::create([
             'email'=> $request->email,
             'username'=> $request->username,
             'password'=> Hash::make($request->password),
