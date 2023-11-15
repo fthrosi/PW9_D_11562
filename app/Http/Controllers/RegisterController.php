@@ -30,7 +30,7 @@ class RegisterController extends Controller
             'username'=> $request->username,
             'website'=>'Atma Library',
             'datetime'=>date('Y-m-d H:i:s'),
-            'url' => request()->getHttpHost() .'/register/verify'.$str
+            'url' => request()->getHttpHost() . '/register/verify/'. $str
         ];
         Mail::to($request->email)->send(new MailSend($details));
 
@@ -41,8 +41,8 @@ class RegisterController extends Controller
     public function verify($verify_key)
     {
         $keyCheck = User::select('verify_key')
-        ->where('verify_key',$verify_key)
-        ->exists();
+            ->where('verify_key',$verify_key)
+            ->exists();
 
         if($keyCheck){
             $user = User::where('verify_key',$verify_key)

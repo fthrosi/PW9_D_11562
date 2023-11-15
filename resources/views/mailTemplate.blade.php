@@ -33,5 +33,8 @@
         </h3>
         <b style="color: blue;">{{$details['url']}}</b>
     </center>
+    <p>
+        terima kasih telah melakukan registrasi.
+    </p>
 </body>
 </html>
